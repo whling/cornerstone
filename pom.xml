@@ -11,6 +11,7 @@
         <module>cornerstone-util</module>
         <module>cornerstone-log</module>
         <module>cornerstone-cache</module>
+        <module>cornerstone-zk</module>
     </modules>
 
     <packaging>pom</packaging>

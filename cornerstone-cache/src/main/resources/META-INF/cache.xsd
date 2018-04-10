@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xsd:schema xmlns="http://code.jiupai.com/schema/cache"
+            xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+            targetNamespace="http://code.jiupai.com/schema/cache">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace"/>
+    <xsd:import namespace="http://www.springframework.org/schema/beans"/>
+    <xsd:import namespace="http://www.springframework.org/schema/tool"/>
+    <xsd:element name="config">
+        <xsd:complexType>
+            <xsd:attribute name="id" type="xsd:ID" use="required">
+                <xsd:annotation>
+                    <xsd:documentation><![CDATA[ The unique identifier for a bean. ]]></xsd:documentation>
+                </xsd:annotation>
+            </xsd:attribute>
+            <xsd:attribute name="type" type="xsd:string" fixed="redis">
+                <xsd:annotation>
+                    <xsd:documentation><![CDATA[ cache type : redis ]]></xsd:documentation>
+                </xsd:annotation>
+            </xsd:attribute>
+            <xsd:attribute name="ip" type="xsd:string" use="required">
+                <xsd:annotation>
+                    <xsd:documentation><![CDATA[ cache ip ]]></xsd:documentation>
+                </xsd:annotation>
+            </xsd:attribute>
+            <xsd:attribute name="port" type="xsd:string" use="optional" default="6379">
+                <xsd:annotation>
+                    <xsd:documentation><![CDATA[ cache port ]]></xsd:documentation>
+                </xsd:annotation>
+            </xsd:attribute>
+            <xsd:attribute name="passwd" type="xsd:string" use="optional">
+                <xsd:annotation>
+                    <xsd:documentation><![CDATA[ cache passwd ]]></xsd:documentation>
+                </xsd:annotation>
+            </xsd:attribute>
+            <xsd:attribute name="maxTotal" type="xsd:string" use="optional" default="1024">
+                <xsd:annotation>
+                    <xsd:documentation><![CDATA[ cache maxActive ]]></xsd:documentation>
+                </xsd:annotation>
+            </xsd:attribute>
+            <xsd:attribute name="maxIdle" type="xsd:string" use="optional" default="10">
+                <xsd:annotation>
+                    <xsd:documentation><![CDATA[ cache maxIdle ]]></xsd:documentation>
+                </xsd:annotation>
+            </xsd:attribute>
+            <xsd:attribute name="minIdle" type="xsd:string" use="optional" default="1">
+                <xsd:annotation>
+                    <xsd:documentation><![CDATA[ cache minIdle ]]></xsd:documentation>
+                </xsd:annotation>
+            </xsd:attribute>
+            <xsd:attribute name="maxWaitMillis" type="xsd:string" use="optional" default="10000">
+                <xsd:annotation>
+                    <xsd:documentation><![CDATA[ cache maxWait ]]></xsd:documentation>
+                </xsd:annotation>
+            </xsd:attribute>
+            <xsd:attribute name="timeOut" type="xsd:string" use="optional" default="1000">
+                <xsd:annotation>
+                    <xsd:documentation><![CDATA[ cache timeOut ]]></xsd:documentation>
+                </xsd:annotation>
+            </xsd:attribute>
+            <xsd:attribute name="retryNum" type="xsd:string" use="optional" default="0">
+                <xsd:annotation>
+                    <xsd:documentation><![CDATA[ cache retryNum ]]></xsd:documentation>
+                </xsd:annotation>
+            </xsd:attribute>
+            <xsd:attribute name="testOnBorrow" type="xsd:string" use="optional" default="true">
+                <xsd:annotation>
+                    <xsd:documentation><![CDATA[ cache testOnBorrow ]]></xsd:documentation>
+                </xsd:annotation>
+            </xsd:attribute>
+            <xsd:attribute name="testOnReturn" type="xsd:string" use="optional" default="true">
+                <xsd:annotation>
+                    <xsd:documentation><![CDATA[ cache testOnReturn ]]></xsd:documentation>
+                </xsd:annotation>
+            </xsd:attribute>
+            <xsd:attribute name="testWhileIdle" type="xsd:string" use="optional" default="false">
+                <xsd:annotation>
+                    <xsd:documentation><![CDATA[ cache testWhileIdle ]]></xsd:documentation>
+                </xsd:annotation>
+            </xsd:attribute>
+        </xsd:complexType>
+    </xsd:element>
+
+    <xsd:element name="template">
+        <xsd:complexType>
+            <xsd:attribute name="id" type="xsd:ID" use="required">
+                <xsd:annotation>
+                    <xsd:documentation><![CDATA[ The unique identifier for a bean. ]]></xsd:documentation>
+                </xsd:annotation>
+            </xsd:attribute>
+            <xsd:attribute name="config" type="xsd:string" use="required">
+                <xsd:annotation>
+                    <xsd:documentation><![CDATA[ cache config ]]></xsd:documentation>
+                </xsd:annotation>
+            </xsd:attribute>
+        </xsd:complexType>
+    </xsd:element>
+</xsd:schema>
